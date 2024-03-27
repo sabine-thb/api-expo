@@ -20,7 +20,6 @@ Cette API permet l'utilisation des endpoints suivants :
 | GET | `/reservation/123` | read |
 | PUT | `/reservation/123` | update |
 | DELETE | `/reservation/123` | delete |
-
 | POST | `/connexion` | connexion backoffice |
 | POST | `/deconnexion` | deconnexion backoffice |
 
