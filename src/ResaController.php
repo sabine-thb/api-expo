@@ -128,42 +128,42 @@ function Deconnexion() {
 }
 
 
-   function sendMail($data) {
-      $to = $data['mail'];
-      $subject = 'Réservation Esprit Vigée';
-      $message = '
-      <div style="background-image:url(https://expo-vigee.thibout.butmmi.o2switch.site/styles/images/backgroundMail.jpg); background-size:cover; background-position:center; padding:20px; width:fit-content; height:auto;" position:relative;>
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);"></div>
-      <div style="text-align: center;">
-          <img src="https://expo-vigee.thibout.butmmi.o2switch.site/styles/images/logo.png" alt="logo" style="margin: 0 auto; width:150px">
-      </div>
-        <h1 style="color:white;font-style:italic;font-size:3rem;">Merci ' . $data['prenom'] . ' !</h1>
-        <h2 style="color:white;">Ta réservation a bien été prise en compte.</h2><hr style="margin:2rem"r >
-        <h3 style="color:white">Détails de la visite :</h3>
-            <article>
-              <h4 style="color:white;margin:0">Le <b>' . $data['date'] . '</b> à <b>' . $data['horaire'] . '</b>
-              </h4>
-              <h4 style="color:white;margin:0">Plein tarif - Gratuit</h4>
-              <h4 style="color:white;margin:0">Nombre de tickets : ' . $data['tickets'] . '</h4>
-            </article><hr style="margin:2rem">
-            <p style="color:white">Besoin d\'un renseignement ? Contactez-nous à l\'adresse <b style="color:white;">contact@esprit-vigee.com</b>. Nous vous répondrons dans les plus brefs délais.</p>
-        <h3 style="color:white;">Bonne visite !</h3>
-      </div>';
-   
-   
-      
+function sendMail($data) {
+  $to = $data['mail'];
+  $subject = 'Réservation Esprit Vigée';
+  $message = '
+  <div style="background-image:url(https://esprit-vigee.com/styles/images/backgroundMail.jpg); background-size:cover; background-position:center; padding:20px; width:fit-content; height:auto;" position:relative;>
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);"></div>
+  <div style="text-align: center;">
+      <img src="https://esprit-vigee.com/styles/images/logo.png" alt="logo" style="margin: 0 auto; width:150px">
+  </div>
+    <h1 style="color:white;font-style:italic;font-size:3rem;">Merci ' . $data['prenom'] . ' !</h1>
+    <h2 style="color:white;">Ta réservation a bien été prise en compte. </h2><h2 style="color:white;">Rendez-vous le ' . $data['date'] . ' au 2 Rue Albert Einstein à Champs-sur-Marne.</h2><hr style="margin:2rem"r >
+    <h3 style="color:white">Détails de la visite :</h3>
+        <article>
+          <h4 style="color:white;margin:0">Le <b>' . $data['date'] . '</b> à <b>' . $data['horaire'] . '</b>
+          </h4>
+          <h4 style="color:white;margin:0">Plein tarif - Gratuit</h4>
+          <h4 style="color:white;margin:0">Nombre de tickets : ' . $data['tickets'] . '</h4>
+        </article><hr style="margin:2rem">
+        <p style="color:white">Besoin d\'un renseignement ? Contactez-nous à l\'adresse <b style="color:white;">contact@esprit-vigee.com</b>. Nous vous répondrons dans les plus brefs délais.</p>
+    <h3 style="color:white;">Bonne visite !</h3>
+  </div>';
 
-      // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
-      $headers[] = 'MIME-Version: 1.0';
-      $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
-      // En-têtes additionnels
-      $headers[] = 'From:sabine@thibout.fr';
+  
 
-      // Envoi
-      mail($to, $subject, $message, implode("\r\n", $headers));
+  // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+  $headers[] = 'MIME-Version: 1.0';
+  $headers[] = 'Content-type: text/html; charset=iso-8859-1';
 
-    }
+  // En-têtes additionnels
+  $headers[] = 'From:contact@esprit-vigee.com';
+
+  // Envoi
+  mail($to, $subject, $message, implode("\r\n", $headers));
+
+}
 
 
     private function processCollectionRequest($method) {
